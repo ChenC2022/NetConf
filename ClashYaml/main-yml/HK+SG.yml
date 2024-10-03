@@ -1,0 +1,479 @@
+port: 7890
+socks-port: 7891
+allow-lan: true
+mode: Rule
+log-level: info
+external-controller: :9090
+#unified-delay: true
+global-client-fingerprint: chrome
+
+dns:
+  enabled: true
+  default-nameserver:
+    - 223.5.5.5
+    - 116.228.111.118
+#    - 202.96.209.5
+  nameserver:
+#    - tls://dns.alidns.com
+#    - tls://dot.pub
+    - 127.0.0.1:1745
+  fallback:
+#    - tls://1.0.0.1:853
+#    - tls://dns.google:853
+    - tls://adg.hks1.lookvip888.top:7853
+    - tls://adg.sgs2.lookvip888.top:7853
+    - 127.0.0.1:1745
+
+proxies: null
+proxy-providers:
+  HK:
+    type: http
+    interval: 86400
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Clash%20for%20OpenWRT%20yaml/HK.yml
+    path: ./HK.yml
+    health-check:
+      enable: true
+      interval: 36000
+      url: http://www.gstatic.com/generate_204
+  SG:
+    type: http
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Clash%20for%20OpenWRT%20yaml/SG.yml
+    interval: 86400
+    path: ./SG.yml
+    health-check:
+      enable: true
+      interval: 36000
+      url: http://www.gstatic.com/generate_204
+proxy-groups:
+  - name: ✅ 默认选择
+    type: select
+    proxies:
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+  - name: OpenAI
+    type: select
+    proxies:
+      - 🇸🇬 SG节点
+      - 🇭🇰 HK节点
+      - ✅ 默认选择
+  - name: Adobe
+    type: select
+    proxies:
+      - 🇸🇬 SG节点
+      - 🇭🇰 HK节点
+      - ✅ 默认选择
+  - name: 🌍 Google
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+  - name: 🌍 Google CN
+    type: select
+    proxies:
+      - DIRECT
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: Ⓜ️ Microsoft
+    type: select
+    proxies:
+      - DIRECT
+      - 🇸🇬 SG节点
+      - 🇭🇰 HK节点
+      - ✅ 默认选择
+  - name: Ⓜ️ OneDrive
+    type: select
+    proxies:
+      - DIRECT
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: 🍎 Apple Service
+    type: select
+    proxies:
+      - DIRECT
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: 📽️ 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: 📽️ 国外媒体
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+  - name: 🎥 YouTube
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: 🎞 NETFLIX
+    type: select
+    proxies:
+      - 🇸🇬 SG节点
+      - 🇭🇰 HK节点
+      - ✅ 默认选择
+      - DIRECT
+  - name: 📢 TikTok
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+  - name: 🔞 Porn
+    type: select
+    proxies:
+      - REJECT
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+  - name: 📲 Telegram
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+      - REJECT
+  - name: ⛔️ 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - ✅ 默认选择
+  - name: 🚫 运营劫持
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - ✅ 默认选择
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - DIRECT
+      - REJECT
+  - name: 🇭🇰 HK节点
+    use:
+      - HK
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
+  - name: 🇸🇬 SG节点
+    use:
+      - SG
+    type: url-test
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
+rules:
+  - RULE-SET,PrivateProxy,✅ 默认选择
+  - RULE-SET,PrivateNET,DIRECT
+  - RULE-SET,PrivateNET_IP,DIRECT
+  - DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
+  - RULE-SET,LocalAreaNetwork,DIRECT
+  - RULE-SET,UnBan,DIRECT
+  - RULE-SET,BanAD,⛔️ 广告拦截
+  - RULE-SET,BanEasyList,⛔️ 广告拦截
+  - RULE-SET,BanEasyListChina,⛔️ 广告拦截
+  - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
+  - RULE-SET,BanProgramAD,⛔️ 广告拦截
+  - RULE-SET,OpenAI,OpenAI
+  - RULE-SET,Bing,OpenAI
+  - RULE-SET,Adobe,Adobe
+  - RULE-SET,Microsoft,Ⓜ️ Microsoft
+  - RULE-SET,OneDrive,Ⓜ️ OneDrive
+  - RULE-SET,ChinaMedia,📽️ 国内媒体
+  - RULE-SET,YouTube,🎥 YouTube
+  - RULE-SET,YouTubeMusic,🎥 YouTube
+  - RULE-SET,Netflix,🎞 NETFLIX
+  - RULE-SET,NetflixIP,🎞 NETFLIX
+  - RULE-SET,NetflixEX,🎞 NETFLIX
+  - RULE-SET,Porn,🔞 Porn
+  - RULE-SET,Pornhub,🔞 Porn
+  - RULE-SET,PornAsia,🔞 Porn
+  - RULE-SET,PornEX,🔞 Porn
+  - RULE-SET,ProxyMedia,📽️ 国外媒体
+  - RULE-SET,GoogleCN,🌍 Google CN
+  - RULE-SET,GoogleCNProxyIP,🌍 Google CN
+  - RULE-SET,Google,🌍 Google
+  - RULE-SET,GoogleEarth,🌍 Google
+  - RULE-SET,GoogleFCM,🌍 Google
+  - RULE-SET,Apple,🍎 Apple Service
+  - RULE-SET,Telegram,📲 Telegram
+  - RULE-SET,TikTok,📢 TikTok
+  - RULE-SET,ProxyGFWlist,✅ 默认选择
+  - RULE-SET,ProxyLite,✅ 默认选择
+  - RULE-SET,ChinaCompanyIp,DIRECT
+  - RULE-SET,ChinaDomain,DIRECT
+  - RULE-SET,ChinaIp,DIRECT
+  - RULE-SET,ChinaIpV6,DIRECT
+  - RULE-SET,Download,DIRECT
+  - GEOIP,CN,DIRECT
+  - MATCH,🐟 漏网之鱼
+rule-providers:
+  Apple:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Apple.yaml
+    path: ./Apple.yml
+    interval: 86400
+  Adobe:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Adobe.yaml
+    path: ./Adobe.yml
+    interval: 86400  
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
+    path: ./BanAD.yml
+    interval: 86400
+  BanEasyList:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+    path: ./BanEasyList.yml
+    interval: 86400
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+    path: ./BanEasyListChina.yml
+    interval: 86400
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml
+    path: ./BanEasyPrivacy.yml
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanProgramAD.yaml
+    path: ./BanProgramAD.yml
+    interval: 86400
+  Bing:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Bing.yaml
+    path: ./Bing.yml
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaCompanyIp.yaml
+    path: ./ChinaCompanyIp.yml
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaDomain.yaml
+    path: ./ChinaDomain.yml
+    interval: 86400
+  ChinaIp:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIp.yaml
+    path: ./ChinaIp.yml
+    interval: 86400
+  ChinaIpV6:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaIpV6.yaml
+    path: ./ChinaIpV6.yml
+    interval: 86400
+  ChinaMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ChinaMedia.yaml
+    path: ./ChinaMedia.yml
+    interval: 86400
+  Download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Download.yaml
+    path: ./Download.yml
+    interval: 86400
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/LocalAreaNetwork.yaml
+    path: ./LocalAreaNetwork.yml
+    interval: 86400
+  MJJ:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/MJJ.yaml
+    path: ./MJJ.yml
+    interval: 86400
+  ProxyGFWlist:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyGFWlist.yaml
+    path: ./ProxyGFWlist.yml
+    interval: 86400
+  ProxyLite:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyLite.yaml
+    path: ./ProxyLite.yml
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Netflix.yaml
+    path: ./Netflix.yml
+    interval: 86400
+  NetflixIP:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/NetflixIP.yaml
+    path: ./NetflixIP.yml
+    interval: 86400
+  NetflixEX:
+    type: http
+    behavior: classical
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/NetflixEX.yml
+    path: ./NetflixEX.yml
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Microsoft.yaml
+    path: ./Microsoft.yml
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTube.yaml
+    path: ./YouTube.yml
+    interval: 86400
+  YouTubeMusic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/YouTubeMusic.yaml
+    path: ./YouTubeMusic.yml
+    interval: 86400
+  Porn:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Porn.yaml
+    path: ./Porn.yml
+    interval: 86400
+  Pornhub:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Pornhub.yaml
+    path: ./Pornhub.yml
+    interval: 86400
+  PornAsia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/PornAsia.yaml
+    path: ./PornAsia.yml
+    interval: 86400
+  PornEX:
+    type: http
+    behavior: classical
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PornEX.yml
+    path: ./PornEX.yml
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/ProxyMedia.yaml
+    path: ./ProxyMedia.yml
+    interval: 86400
+  UnBan:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/UnBan.yaml
+    path: ./UnBan.yml
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/OneDrive.yaml
+    path: ./OneDrive.yml
+    interval: 86400
+  TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/TikTok.yaml
+    path: ./TikTok.yml
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Telegram.yaml
+    path: ./Telegram.yml
+    interval: 86400
+  Google:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/Google.yaml
+    path: ./Google.yml
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCN.yaml
+    path: ./GoogleCN.yml
+    interval: 86400
+  GoogleCNProxyIP:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleCNProxyIP.yaml
+    path: ./GoogleCNProxyIP.yml
+    interval: 86400
+  GoogleEarth:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleEarth.yaml
+    path: ./GoogleEarth.yml
+    interval: 86400
+  GoogleFCM:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/GoogleFCM.yaml
+    path: ./GoogleFCM.yml
+    interval: 86400
+  PrivateNET:
+    type: http
+    behavior: classical
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateNET.yml
+    path: ./PrivateNET.yml
+    interval: 86400
+  PrivateProxy:
+    type: http
+    behavior: classical
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateProxy.yml
+    path: ./PrivateProxy.yml
+    interval: 86400
+  PrivateNET_IP:
+    type: http
+    behavior: classical
+    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateNET_IP.yml
+    path: ./PrivateNET_IP.yml
+    interval: 86400
+  OpenAI:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
+    path: ./OpenAI.yml
+    interval: 86400
