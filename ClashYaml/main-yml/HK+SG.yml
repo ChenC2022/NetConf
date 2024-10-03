@@ -29,7 +29,7 @@ proxy-providers:
   HK:
     type: http
     interval: 86400
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Clash%20for%20OpenWRT%20yaml/HK.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/proxy-providers/HK.yml
     path: ./HK.yml
     health-check:
       enable: true
