@@ -1,0 +1,31 @@
+proxies:
+  - name: 57801-vmess-ws-tls
+    server: xui.hks1.lookvip888.top
+    port: 57801
+    type: vmess
+    uuid: c0bb396e-65ad-4766-f4be-9e1fb604d6cf
+    alterId: 0
+    cipher: auto
+    tls: true
+    skip-cert-verify: true
+    network: ws
+    ws-opts: 
+      path: /
+      headers: 
+        Host: xui.hks1.lookvip888.top
+    udp: true
+    
+  - name: 57802-vless-reality-vision               
+    type: vless
+    server: xui.hks1.lookvip888.top                           
+    port: 57802                                
+    uuid: cdd89f4e-23b4-4fc5-e80d-ebb5e2be97ba   
+    network: tcp
+    udp: true
+    tls: true
+    flow: xtls-rprx-vision
+    servername: www.yahoo.com                 
+    reality-opts: 
+      public-key: MHWkQROOkXL7TETft4bgI_Hs4mnc63yPn8rxiYGkJT8    
+      short-id: 2cbd9181                      
+    client-fingerprint: chrome
