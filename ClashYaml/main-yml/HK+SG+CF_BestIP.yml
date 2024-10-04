@@ -378,7 +378,7 @@ rule-providers:
   NetflixEX:
     type: http
     behavior: classical
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/NetflixEX.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/rule-providers/NetflixEX.yml
     path: ./NetflixEX.yml
     interval: 86400
   Microsoft:
@@ -420,7 +420,7 @@ rule-providers:
   PornEX:
     type: http
     behavior: classical
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PornEX.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/rule-providers/PornEX.yml
     path: ./PornEX.yml
     interval: 86400
   ProxyMedia:
@@ -486,19 +486,19 @@ rule-providers:
   PrivateNET:
     type: http
     behavior: classical
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateNET.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/rule-providers/PrivateNET.yml
     path: ./PrivateNET.yml
     interval: 86400
   PrivateProxy:
     type: http
     behavior: classical
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateProxy.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/rule-providers/PrivateProxy.yml
     path: ./PrivateProxy.yml
     interval: 86400
   PrivateNET_IP:
     type: http
     behavior: classical
-    url: https://alist.hks1.lookvip888.top/d/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/Clash/Rules/PrivateNET_IP.yml
+    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/rule-providers/PrivateNET_IP.yml
     path: ./PrivateNET_IP.yml
     interval: 86400
   OpenAI:
