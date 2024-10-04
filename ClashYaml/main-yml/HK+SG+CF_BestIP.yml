@@ -205,9 +205,9 @@ proxy-groups:
   - name: ⚛️ CF节点
     use:
       - CF_BestIP
-    type: url-test
-    url: http://www.gstatic.com/generate_204
-    interval: 36000
+    type: select
+#    url: http://www.gstatic.com/generate_204
+#    interval: 36000
 
 rules:
   - RULE-SET,PrivateProxy,✅ 默认选择
