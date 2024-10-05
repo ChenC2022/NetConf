@@ -61,13 +61,13 @@ proxy-groups:
       - 🇸🇬 SG节点
       - ⚛️ CF节点
       - DIRECT
-  - name: AI
+  - name: 🤖 AI
     type: select
     proxies:
       - 🇸🇬 SG节点
       - ✅ 默认选择
       - ⚛️ CF节点
-  - name: Adobe
+  - name: 🖼 Adobe
     type: select
     proxies:
       - 🇸🇬 SG节点
@@ -221,12 +221,12 @@ rules:
   - RULE-SET,BanEasyListChina,⛔️ 广告拦截
   - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
   - RULE-SET,BanProgramAD,⛔️ 广告拦截
-  - RULE-SET,OpenAI,AI
-  - RULE-SET,Bing,AI
-  - RULE-SET,BardAI,AI
-  - RULE-SET,Claude,AI
-  - RULE-SET,Anthropic,AI
-  - RULE-SET,Adobe,Adobe
+  - RULE-SET,OpenAI,🤖 AI
+  - RULE-SET,Bing,🤖 AI
+  - RULE-SET,BardAI,🤖 AI
+  - RULE-SET,Claude,🤖 AI
+  - RULE-SET,Anthropic,🤖 AI
+  - RULE-SET,Adobe,🖼 Adobe
   - RULE-SET,Microsoft,Ⓜ️ Microsoft
   - RULE-SET,OneDrive,Ⓜ️ OneDrive
   - RULE-SET,SteamCN,DIRECT
