@@ -51,13 +51,13 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - DIRECT
-  - name: OpenAI
+  - name: 🤖 AI
     type: select
     proxies:
       - 🇸🇬 SG节点
       - 🇭🇰 HK节点
       - ✅ 默认选择
-  - name: Adobe
+  - name: 🖼 Adobe
     type: select
     proxies:
       - 🇸🇬 SG节点
@@ -191,11 +191,15 @@ rules:
   - RULE-SET,BanEasyListChina,⛔️ 广告拦截
   - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
   - RULE-SET,BanProgramAD,⛔️ 广告拦截
-  - RULE-SET,OpenAI,OpenAI
-  - RULE-SET,Bing,OpenAI
-  - RULE-SET,Adobe,Adobe
+  - RULE-SET,OpenAI,🤖 AI
+  - RULE-SET,Bing,🤖 AI
+  - RULE-SET,BardAI,🤖 AI
+  - RULE-SET,Claude,🤖 AI
+  - RULE-SET,Anthropic,🤖 AI
+  - RULE-SET,Adobe,🖼 Adobe
   - RULE-SET,Microsoft,Ⓜ️ Microsoft
   - RULE-SET,OneDrive,Ⓜ️ OneDrive
+  - RULE-SET,SteamCN,DIRECT
   - RULE-SET,ChinaMedia,📽️ 国内媒体
   - RULE-SET,YouTube,🎥 YouTube
   - RULE-SET,YouTubeMusic,🎥 YouTube
@@ -476,4 +480,28 @@ rule-providers:
     behavior: classical
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/OpenAI/OpenAI.yaml
     path: ./OpenAI.yml
+    interval: 86400
+  BardAI:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/BardAI/BardAI.yaml
+    path: ./BardAI.yml
+    interval: 86400
+  Claude:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Claude/Claude.yaml
+    path: ./Claude.yml
+    interval: 86400
+  Anthropic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Anthropic/Anthropic.yaml
+    path: ./Anthropic.yml
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/SteamCN/SteamCN.yaml
+    path: ./SteamCN.yml
     interval: 86400
