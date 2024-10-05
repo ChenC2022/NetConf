@@ -139,6 +139,15 @@ proxy-groups:
       - ✅ 默认选择
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
+  - name: 📥 PikPak
+    type: select
+    proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - ⚛️ CF节点
+      - DIRECT
+      - REJECT
   - name: 📲 Telegram
     type: select
     proxies:
