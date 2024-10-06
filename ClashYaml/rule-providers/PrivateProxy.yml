@@ -8,4 +8,3 @@ payload:
   - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,speedtest.net
   - DOMAIN-SUFFIX,docker.com
-  - DOMAIN-SUFFIX,edgedns.lookvip888.top
