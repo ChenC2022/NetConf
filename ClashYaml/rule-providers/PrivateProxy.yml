@@ -7,6 +7,4 @@ payload:
   - DOMAIN-SUFFIX,t66y.com
   - DOMAIN-SUFFIX,cloudflare.com
   - DOMAIN-SUFFIX,speedtest.net
-  - DOMAIN-SUFFIX,mypikpak.com
-  - DOMAIN-SUFFIX,pikpak.me
   - DOMAIN-SUFFIX,docker.com

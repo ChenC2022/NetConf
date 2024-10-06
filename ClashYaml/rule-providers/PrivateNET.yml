@@ -15,7 +15,6 @@ payload:
   - DOMAIN-KEYWORD,tencent
   - DOMAIN-SUFFIX,unity3d.com
   - DOMAIN-SUFFIX,http-inputs-notion.splunkcloud.com
-  - DOMAIN-SUFFIX,mypikpak.com
   - DOMAIN-SUFFIX,antpcdn.com
   - DOMAIN-SUFFIX,xboxlive.com
   - DOMAIN-SUFFIX,minecraft.net
