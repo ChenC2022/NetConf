@@ -11,18 +11,19 @@ dns:
   enabled: true
   default-nameserver:
     - 223.5.5.5
-    - 116.228.111.118
+    - 114.114.114.114
+#    - 116.228.111.118
 #    - 202.96.209.5
   nameserver:
-#    - tls://dns.alidns.com
-#    - tls://dot.pub
-    - 127.0.0.1:1745
+    - tls://223.5.5.5
+    - tls://1.12.12.12
+#    - 127.0.0.1:1745
   fallback:
-#    - tls://1.0.0.1:853
-#    - tls://dns.google:853
-    - tls://adg.hks1.lookvip888.top:7853
-    - tls://adg.sgs2.lookvip888.top:7853
-    - 127.0.0.1:1745
+    - tls://1.1.1.1:853
+    - tls://8.8.8.8:853
+#    - tls://adg.hks1.lookvip888.top:7853
+#    - tls://adg.sgs2.lookvip888.top:7853
+#    - 127.0.0.1:1745
 
 proxies: null
 proxy-providers:
@@ -188,18 +189,18 @@ proxy-groups:
       - ⚛️ CF节点
       - DIRECT
       - REJECT
-  - name: ⛔️ 广告拦截
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - ✅ 默认选择
-  - name: 🚫 运营劫持
-    type: select
-    proxies:
-      - REJECT
-      - DIRECT
-      - ✅ 默认选择
+  # - name: ⛔️ 广告拦截
+    # type: select
+    # proxies:
+      # - REJECT
+      # - DIRECT
+      # - ✅ 默认选择
+  # - name: 🚫 运营劫持
+    # type: select
+    # proxies:
+      # - REJECT
+      # - DIRECT
+      # - ✅ 默认选择
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -236,11 +237,11 @@ rules:
   - DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,UnBan,DIRECT
-  - RULE-SET,BanAD,⛔️ 广告拦截
-  - RULE-SET,BanEasyList,⛔️ 广告拦截
-  - RULE-SET,BanEasyListChina,⛔️ 广告拦截
-  - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
-  - RULE-SET,BanProgramAD,⛔️ 广告拦截
+  # - RULE-SET,BanAD,⛔️ 广告拦截
+  # - RULE-SET,BanEasyList,⛔️ 广告拦截
+  # - RULE-SET,BanEasyListChina,⛔️ 广告拦截
+  # - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
+  # - RULE-SET,BanProgramAD,⛔️ 广告拦截
   - RULE-SET,OpenAI,🤖 AI
   - RULE-SET,Bing,🤖 AI
   - RULE-SET,BardAI,🤖 AI
