@@ -189,18 +189,18 @@ proxy-groups:
       - ⚛️ CF节点
       - DIRECT
       - REJECT
-  # - name: ⛔️ 广告拦截
-    # type: select
-    # proxies:
-      # - REJECT
-      # - DIRECT
-      # - ✅ 默认选择
-  # - name: 🚫 运营劫持
-    # type: select
-    # proxies:
-      # - REJECT
-      # - DIRECT
-      # - ✅ 默认选择
+  - name: ⛔️ 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - ✅ 默认选择
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+      - ✅ 默认选择
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -234,14 +234,14 @@ rules:
   - RULE-SET,PrivateProxy,✅ 默认选择
   - RULE-SET,PrivateNET,DIRECT
   - RULE-SET,PrivateNET_IP,DIRECT
-  - DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
+#  - DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,UnBan,DIRECT
-  # - RULE-SET,BanAD,⛔️ 广告拦截
+  - RULE-SET,BanAD,⛔️ 广告拦截
   # - RULE-SET,BanEasyList,⛔️ 广告拦截
   # - RULE-SET,BanEasyListChina,⛔️ 广告拦截
   # - RULE-SET,BanEasyPrivacy,⛔️ 广告拦截
-  # - RULE-SET,BanProgramAD,⛔️ 广告拦截
+  - RULE-SET,BanProgramAD,🍃 应用净化
   - RULE-SET,OpenAI,🤖 AI
   - RULE-SET,Bing,🤖 AI
   - RULE-SET,BardAI,🤖 AI
