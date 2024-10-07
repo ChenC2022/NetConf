@@ -61,7 +61,8 @@ proxy-providers:
     health-check:
       enable: true
       interval: 36000
-      url: http://www.gstatic.com/generate_204  
+      url: http://www.gstatic.com/generate_204
+    exclude-filter: "t.me"
 proxy-groups:
   - name: ✅ 默认选择
     type: select
