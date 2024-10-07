@@ -299,24 +299,24 @@ rule-providers:
     url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml
     path: ./BanAD.yml
     interval: 86400
-  BanEasyList:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
-    path: ./BanEasyList.yml
-    interval: 86400
-  BanEasyListChina:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
-    path: ./BanEasyListChina.yml
-    interval: 86400
-  BanEasyPrivacy:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml
-    path: ./BanEasyPrivacy.yml
-    interval: 86400
+  # BanEasyList:
+    # type: http
+    # behavior: classical
+    # url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml
+    # path: ./BanEasyList.yml
+    # interval: 86400
+  # BanEasyListChina:
+    # type: http
+    # behavior: classical
+    # url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml
+    # path: ./BanEasyListChina.yml
+    # interval: 86400
+  # BanEasyPrivacy:
+    # type: http
+    # behavior: classical
+    # url: https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml
+    # path: ./BanEasyPrivacy.yml
+    # interval: 86400
   BanProgramAD:
     type: http
     behavior: classical
