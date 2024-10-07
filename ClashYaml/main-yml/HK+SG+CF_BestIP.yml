@@ -53,6 +53,15 @@ proxy-providers:
       enable: true
       interval: 36000
       url: http://www.gstatic.com/generate_204
+  CF_CountryBestIP:
+    type: http
+    url: https://ed.lookvip888.top/bestip/c5a04c9d-8d1a-470c-95e0-840febb646ca
+    interval: 86400
+    path: ./CF_CountryBestIP.yml
+    health-check:
+      enable: true
+      interval: 36000
+      url: http://www.gstatic.com/generate_204  
 proxy-groups:
   - name: ✅ 默认选择
     type: select
@@ -214,6 +223,7 @@ proxy-groups:
   - name: ⚛️ CF节点
     use:
       - CF_BestIP
+      - CF_CountryBestIP
     type: select
 #    url: http://www.gstatic.com/generate_204
 #    interval: 36000
