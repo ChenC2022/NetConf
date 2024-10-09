@@ -77,8 +77,8 @@ proxy-providers:
     exclude-filter: "EDtunnel" 
     override:
       proxy-name:
-      - pattern: "cccfnodes.lookvip888.top-HTTPS-443"
-      - target: "Port-"      
+      - old-name: "cccfnodes.lookvip888.top-HTTPS-443"
+      - new-name: "Port-"      
     
 proxy-groups:
   - name: ✅ 默认选择
