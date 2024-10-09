@@ -1,2 +1,3 @@
-proxies:
-  - {name: 🎲 Random, server: singapore.com, port: 443, client-fingerprint: random, type: vless, uuid: c5a04c9d-8d1a-470c-95e0-840febb646ca, tls: true, servername: ed.lookvip888.top, network: ws, ws-opts: {path: /, headers: {Host: ed.lookvip888.top}}}
+# proxies:
+  # - {name: 🎲 Random, server: singapore.com, port: 443, client-fingerprint: random, type: vless, uuid: c5a04c9d-8d1a-470c-95e0-840febb646ca, tls: true, servername: ed.lookvip888.top, network: ws, ws-opts: {path: /, headers: {Host: ed.lookvip888.top}}}
+vless://c5a04c9d-8d1a-470c-95e0-840febb646ca@cdn-all.xn--b6gac.eu.org:443?encryption=none&security=tls&sni=cccfnodes.lookvip888.top&fp=randomized&type=ws&host=cccfnodes.lookvip888.top&path=%2F%3Fed%3D2048#cccfnodes.lookvip888.top
