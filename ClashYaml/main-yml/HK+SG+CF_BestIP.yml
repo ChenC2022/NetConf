@@ -74,6 +74,7 @@ proxy-providers:
       interval: 36000
       url: http://www.gstatic.com/generate_204
     filter: "HTTPS"
+    exclude-filter: "EDtunnel"
 proxy-groups:
   - name: ✅ 默认选择
     type: select
