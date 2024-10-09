@@ -75,11 +75,6 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
     filter: "HTTPS"
     exclude-filter: "EDtunnel" 
-    override:
-      additional-suffix: "CC"
-      # proxy-name:
-      # - old-name: "cccfnodes.lookvip888.top-HTTPS-443"
-      # - new-name: "Port-"      
     
 proxy-groups:
   - name: ✅ 默认选择
