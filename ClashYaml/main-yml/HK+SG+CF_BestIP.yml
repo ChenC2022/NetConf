@@ -227,6 +227,7 @@ rules:
   - RULE-SET,PrivateNET,DIRECT
   - RULE-SET,PrivateNET_IP,DIRECT
 #  - DOMAIN-SUFFIX,msn.cn,Ⓜ️ Microsoft
+  - DOMAIN,whatismyipaddress.com,📥 PikPak
   - RULE-SET,LocalAreaNetwork,DIRECT
   - RULE-SET,UnBan,DIRECT
   - RULE-SET,BanAD,⛔️ 广告拦截
