@@ -56,7 +56,29 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
     filter: "443"
     exclude-filter: "EDtunnel|8443" 
-
+    
+  BP_CM:
+    type: http
+    url: https://tg.cmliussss.us.kg/auto?clash
+    interval: 86400
+    path: ./BP_CM.yml
+    health-check:
+      enable: true
+      interval: 36000
+      url: http://www.gstatic.com/generate_204
+    exclude-filter: "t.me|CT|CMCC|AT" 
+    
+  BP_CM2:
+    type: http
+    url: https://vless.fxxk.dedyn.io/auto
+    interval: 86400
+    path: ./BP_CM2.yml
+    health-check:
+      enable: true
+      interval: 36000
+      url: http://www.gstatic.com/generate_204
+    exclude-filter: "t.me|CT|CMCC|AT"
+    
 proxy-groups:
   - name: ✅ 默认选择
     type: select
@@ -64,6 +86,7 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
   - name: 🤖 AI
     type: select
@@ -132,6 +155,7 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
   - name: 🎥 YouTube
     type: select
@@ -140,6 +164,7 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
   - name: 🎞 NETFLIX
     type: select
     proxies:
@@ -221,7 +246,13 @@ proxy-groups:
     type: select
     url: http://www.gstatic.com/generate_204
     interval: 36000
-
+  - name: 🪢 白嫖
+    use:
+      - BP_CM
+      - BP_CM2
+    type: select
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
 rules:
   - RULE-SET,PrivateProxy,✅ 默认选择
   - RULE-SET,PrivateNET,DIRECT
