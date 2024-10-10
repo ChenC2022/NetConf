@@ -45,38 +45,18 @@ proxy-providers:
       enable: true
       interval: 36000
       url: http://www.gstatic.com/generate_204
-  CF_BestIP:
+  CF:
     type: http
-    url: https://github.com/ChenC2022/NetConf/raw/refs/heads/main/ClashYaml/proxy-providers/CF_BestIP.yml
+    url: https://api.v1.mk/sub?target=clash&url=https%3A%2F%2Fed.lookvip888.top%2Fsub%2Fc5a04c9d-8d1a-470c-95e0-840febb646ca%3Fformat%3Dclash&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true
     interval: 86400
-    path: ./CF_BestIP.yml
+    path: ./CF.yml
     health-check:
       enable: true
       interval: 36000
       url: http://www.gstatic.com/generate_204
-  CF_CountryBestIP:
-    type: http
-    url: https://ed.lookvip888.top/bestip/c5a04c9d-8d1a-470c-95e0-840febb646ca
-    interval: 86400
-    path: ./CF_CountryBestIP.yml
-    health-check:
-      enable: true
-      interval: 36000
-      url: http://www.gstatic.com/generate_204
-    exclude-filter: "t.me"
-  # CF_ED:
-    # type: http
-    # url: https://url.v1.mk/sub?target=clash&url=https%3A%2F%2Fcccfnodes.lookvip888.top%2Fsub%2Fc5a04c9d-8d1a-470c-95e0-840febb646ca%3Fformat%3Dclash&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true
-    # url: https://cccfnodes.lookvip888.top/bestip/c5a04c9d-8d1a-470c-95e0-840febb646ca
-    # interval: 86400
-    # path: ./CF_ED.yml
-    # health-check:
-      # enable: true
-      # interval: 36000
-      # url: http://www.gstatic.com/generate_204
-    # filter: "HTTPS"
-    # exclude-filter: "EDtunnel" 
-    
+    filter: "443"
+    exclude-filter: "EDtunnel|8443" 
+
 proxy-groups:
   - name: ✅ 默认选择
     type: select
@@ -237,12 +217,10 @@ proxy-groups:
     interval: 36000
   - name: ⚛️ CF节点
     use:
-      - CF_BestIP
-      - CF_CountryBestIP
-      # - CF_ED
+      - CF
     type: select
-#    url: http://www.gstatic.com/generate_204
-#    interval: 36000
+    url: http://www.gstatic.com/generate_204
+    interval: 36000
 
 rules:
   - RULE-SET,PrivateProxy,✅ 默认选择
