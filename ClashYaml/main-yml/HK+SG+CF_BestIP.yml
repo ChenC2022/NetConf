@@ -88,18 +88,27 @@ proxy-groups:
       - ⚛️ CF节点
       - 🪢 白嫖
       - DIRECT
+      - REJECT
   - name: 🤖 AI
     type: select
     proxies:
       - 🇸🇬 SG节点
       - ✅ 默认选择
+      - 🇭🇰 HK节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - DIRECT
+      - REJECT
   - name: 🖼 Adobe
     type: select
     proxies:
-      - 🇸🇬 SG节点
       - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - DIRECT
+      - REJECT
   - name: 🌍 Google
     type: select
     proxies:
@@ -107,7 +116,9 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
+      - REJECT
   - name: 🌍 Google CN
     type: select
     proxies:
@@ -116,14 +127,18 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - REJECT
   - name: Ⓜ️ Microsoft
     type: select
     proxies:
       - DIRECT
-      - 🇸🇬 SG节点
-      - 🇭🇰 HK节点
       - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - REJECT
   - name: Ⓜ️ OneDrive
     type: select
     proxies:
@@ -132,6 +147,8 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - REJECT
   - name: 🍎 Apple Service
     type: select
     proxies:
@@ -140,6 +157,8 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - REJECT
   - name: 📽️ 国内媒体
     type: select
     proxies:
@@ -148,6 +167,8 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - REJECT
   - name: 📽️ 国外媒体
     type: select
     proxies:
@@ -157,6 +178,7 @@ proxy-groups:
       - ⚛️ CF节点
       - 🪢 白嫖
       - DIRECT
+      - REJECT
   - name: 🎥 YouTube
     type: select
     proxies:
@@ -165,14 +187,18 @@ proxy-groups:
       - 🇸🇬 SG节点
       - ⚛️ CF节点
       - 🪢 白嫖
+      - DIRECT
+      - REJECT
   - name: 🎞 NETFLIX
     type: select
     proxies:
+      - ✅ 默认选择
+      - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
-      - 🇭🇰 HK节点
-      - ✅ 默认选择
+      - 🪢 白嫖
       - DIRECT
+      - REJECT
   - name: 📢 TikTok
     type: select
     proxies:
@@ -180,15 +206,19 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
+      - REJECT
   - name: 🔞 Porn
     type: select
     proxies:
-      - REJECT
       - ✅ 默认选择
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
+      - DIRECT
+      - REJECT
   - name: 📥 PikPak
     type: select
     proxies:
@@ -196,6 +226,7 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
       - REJECT
   - name: 📲 Telegram
@@ -205,20 +236,29 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
       - REJECT
   - name: ⛔️ 广告拦截
     type: select
     proxies:
       - REJECT
-      - DIRECT
       - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - ⚛️ CF节点
+      - 🪢 白嫖
+      - DIRECT
   - name: 🍃 应用净化
     type: select
     proxies:
       - REJECT
-      - DIRECT
       - ✅ 默认选择
+      - 🇭🇰 HK节点
+      - 🇸🇬 SG节点
+      - ⚛️ CF节点
+      - 🪢 白嫖
+      - DIRECT
   - name: 🐟 漏网之鱼
     type: select
     proxies:
@@ -226,8 +266,10 @@ proxy-groups:
       - 🇭🇰 HK节点
       - 🇸🇬 SG节点
       - ⚛️ CF节点
+      - 🪢 白嫖
       - DIRECT
       - REJECT
+      
   - name: 🇭🇰 HK节点
     use:
       - HK
