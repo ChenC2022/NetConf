@@ -290,7 +290,7 @@ proxy-groups:
     interval: 36000
   - name: 🪢 白嫖
     use:
-      - BP_CM
+      #- BP_CM
       - BP_CM2
     type: select
     url: http://www.gstatic.com/generate_204
