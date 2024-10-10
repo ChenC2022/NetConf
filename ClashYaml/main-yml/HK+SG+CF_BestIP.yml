@@ -56,14 +56,14 @@ proxy-providers:
       url: http://www.gstatic.com/generate_204
   CF_CountryBestIP:
     type: http
-    url: https://cccfnodes.lookvip888.top/bestip/c5a04c9d-8d1a-470c-95e0-840febb646ca
+    url: https://ed.lookvip888.top/bestip/c5a04c9d-8d1a-470c-95e0-840febb646ca
     interval: 86400
     path: ./CF_CountryBestIP.yml
     health-check:
       enable: true
       interval: 36000
       url: http://www.gstatic.com/generate_204
-    exclude-filter: "t.me"
+    # exclude-filter: "t.me"
   # CF_ED:
     # type: http
     # url: https://url.v1.mk/sub?target=clash&url=https%3A%2F%2Fcccfnodes.lookvip888.top%2Fsub%2Fc5a04c9d-8d1a-470c-95e0-840febb646ca%3Fformat%3Dclash&insert=false&emoji=true&list=false&tfo=false&scv=true&fdn=false&sort=false&new_name=true
